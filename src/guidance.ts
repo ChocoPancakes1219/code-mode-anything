@@ -1,0 +1,3 @@
+/** Shared guidance for gateway instructions and generated/installed harness skills. */
+export const workflowGuidance =
+  "Search once with the service and task verbs. Search includes schemas for top matches; skip describe when those suffice, or batch missing schemas with describe({server, operations:[name,...]}). Compose the complete workflow in one execute call using tools[server][operation](args). Keep listings, navigation snapshots and raw data inside the script; filter and aggregate there, and return only the requested final answer. Do not return intermediate data merely to repeat retrieval in another execution. Use detail:'full' only when full execution diagnostics are needed.";

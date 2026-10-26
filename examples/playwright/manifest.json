@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "playwright",
+  "description": "Discover operations from the real pinned Playwright MCP server at installation.",
+  "backend": {
+    "kind": "mcp",
+    "transport": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@0.0.83", "--headless", "--isolated"]
+    }
+  },
+  "operations": []
+}

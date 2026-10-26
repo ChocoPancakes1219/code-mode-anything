@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "harnesses": [
+    {
+      "name": "atlassian",
+      "description": "Discover Atlassian MCP operations using interactive OAuth.",
+      "manifest": "examples/atlassian/manifest.json",
+      "prerequisites": [
+        "An Atlassian account with access to the target site",
+        "Node.js and npx for the mcp-remote OAuth bridge"
+      ]
+    },
+    {
+      "name": "playwright",
+      "description": "Discover and run the real Playwright MCP browser server.",
+      "manifest": "examples/playwright/manifest.json",
+      "prerequisites": [
+        "Node.js and npx",
+        "Playwright browser binaries and operating system dependencies"
+      ]
+    },
+    {
+      "name": "github",
+      "description": "Discover GitHub MCP operations using GITHUB_TOKEN.",
+      "manifest": "examples/github/manifest.json",
+      "prerequisites": ["GITHUB_TOKEN with access to the intended repositories"]
+    },
+    {
+      "name": "github-rest",
+      "description": "Read a repository through the public GitHub REST API.",
+      "manifest": "examples/github-rest/manifest.json",
+      "prerequisites": [
+        "Network access to api.github.com; public API rate limits apply"
+      ]
+    },
+    {
+      "name": "inkscape",
+      "description": "Inspect Inkscape and export local SVG files to new PNG files.",
+      "manifest": "examples/inkscape/manifest.json",
+      "prerequisites": [
+        "Inkscape executable available as inkscape or through INKSCAPE_BIN"
+      ]
+    }
+  ]
+}

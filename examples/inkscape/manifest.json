@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "name": "inkscape",
+  "description": "Narrow real Inkscape CLI adapter for local SVG to PNG export.",
+  "backend": {
+    "kind": "module",
+    "entry": "./adapter.mjs"
+  },
+  "operations": [
+    {
+      "name": "info",
+      "description": "Run the real Inkscape executable and return its version.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["version", "capabilities"]
+      }
+    },
+    {
+      "name": "export_png",
+      "description": "Export a local SVG using real Inkscape. Output must be a new .png path in an existing directory.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "minLength": 1
+          },
+          "output": {
+            "type": "string",
+            "minLength": 1
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          }
+        },
+        "required": ["input", "output"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "output": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 24
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": ["output", "bytes", "width", "height"]
+      }
+    }
+  ]
+}

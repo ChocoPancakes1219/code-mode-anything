@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "atlassian",
+  "description": "Discover current Atlassian MCP operations at installation; OAuth login is interactive.",
+  "backend": {
+    "kind": "mcp",
+    "transport": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "oauth": "mcp-remote"
+    }
+  },
+  "operations": []
+}

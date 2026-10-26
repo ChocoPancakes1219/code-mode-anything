@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "name": "github",
+  "description": "Discover current GitHub MCP operations at installation.",
+  "backend": {
+    "kind": "mcp",
+    "transport": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_TOKEN}"
+      }
+    }
+  },
+  "operations": []
+}
